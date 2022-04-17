@@ -27,3 +27,9 @@ variable private_sub2_cidr {
 variable region{
     type=string
 }
+variable password{
+    type=string
+}
+variable username{
+    type=string
+}
