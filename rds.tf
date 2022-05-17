@@ -7,7 +7,7 @@ resource "aws_db_instance" "myrds" {
 #   username             = "foo"
     username = var.username
 #   password             = "foobarbaz"
-    password = var.password
+    # password = var.password
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
   db_subnet_group_name =  aws_db_subnet_group.mydb.name 

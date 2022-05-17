@@ -12,6 +12,7 @@ pipeline {
                     sh """
                     terraform init
                     terraform plan
+                    terraform fmt
                     """
                     
                     }
@@ -21,9 +22,10 @@ pipeline {
         stage('CDApply') {
             steps {
                 sh """
-              
+                export TF_VAR_username=foo
+                export TF_VAR_password=foobarbaz
                 terraform workspace select dev 
-                terraform apply --auto-approve
+                terraform apply --auto-approve -var password=$RDS_PASSWORD -var-file dev.tfvars
                 
                 """
             }
