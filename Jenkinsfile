@@ -21,13 +21,14 @@ pipeline {
         }
         stage('CDApply') {
             steps {
+                 withCredentials([string(credentialsId: 'RDS_PASSWORD', variable: 'PASS')]) {
                 sh """
-                export username=foo
-                export password=foobarbaz
+              
                 terraform workspace select dev 
-                terraform destroy --auto-approve 
+                terraform apply --auto-approve -var password=${PASS}
                 
                 """
+                }
             }
         }
      

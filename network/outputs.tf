@@ -5,6 +5,8 @@ output pub_sub1_id {
 output pub_sub2_id {
     value = aws_subnet.public-sub-1b.id
 }
+
+
 output priv_sub1_id {
     value = aws_subnet.private-sub-1a.id
 }
