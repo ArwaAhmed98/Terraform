@@ -20,11 +20,12 @@ pipeline {
             }
         stage('Apply') {
             steps {
-                withCredentials([string(credentialsId: 'RDS_PASSWORD', variable: 'PASS')]) 
+                withCredentials([string(credentialsId: 'RDS_PASSWORD', variable: 'PASS')]) {
                         sh '''
                         terraform workspace select dev 
                         terraform apply --auto-approve 
                         '''
+                }
                 // terraform apply --auto-approve -var="password=$(PASS)"
                         
             }
