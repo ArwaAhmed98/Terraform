@@ -5,7 +5,7 @@ pipeline {
     //     AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     // }
     stages {
-        stage('CIinitPlan') {
+        stage('Plan') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-credentails', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                   
@@ -16,10 +16,9 @@ pipeline {
                     """
                     
                     }
-                // 
+                }
             }
-        }
-        stage('CDApply') {
+        stage('Apply') {
             steps {
                 withCredentials([string(credentialsId: 'RDS_PASSWORD', variable: 'PASS')]) {
                         sh """
