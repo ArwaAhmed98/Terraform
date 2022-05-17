@@ -20,10 +20,6 @@ pipeline {
                 // 
             }
         }
-        stage('Example stage 2') {
-            steps {
-                // 
-            }
-        }
-    }
+     
+    
 }
