@@ -14,6 +14,7 @@ pipeline {
                     // also available as a Groovy variable
                     echo USERNAME
                     // or inside double quotes for string interpolation
+                    echo 'arwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
                     echo "username is $USERNAME"
                     }
                 // 
