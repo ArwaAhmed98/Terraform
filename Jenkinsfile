@@ -5,7 +5,7 @@ pipeline {
     //     AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     // }
     stages {
-        stage('CI/Init&Plan') {
+        stage('CIinitPlan') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-credentails', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                   
@@ -18,7 +18,7 @@ pipeline {
                 // 
             }
         }
-        stage('CD/Apply') {
+        stage('CDApply') {
             steps {
                 sh 'terraform apply --auto-approve'
             }
