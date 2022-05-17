@@ -22,8 +22,8 @@ pipeline {
         stage('CDApply') {
             steps {
                 sh """
-                export username=foo
-                export password=foobarbaz
+                export username=(foo)
+                export password=(foobarbaz)
                 terraform workspace select dev 
                 terraform apply --auto-approve -var-file dev.tfvars
                 
