@@ -25,7 +25,7 @@ pipeline {
                 export username=foo
                 export password=foobarbaz
                 terraform workspace select dev 
-                terraform apply --auto-approve 
+                terraform destroy --auto-approve 
                 
                 """
             }
