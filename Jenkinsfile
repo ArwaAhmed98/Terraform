@@ -23,7 +23,7 @@ pipeline {
                 sh """
               
                 terraform workspace select dev 
-                terraform apply --var-file dev.tfvars --auto-approve
+                terraform apply --auto-approve
                 
                 """
             }
