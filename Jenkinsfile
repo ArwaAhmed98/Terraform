@@ -20,7 +20,7 @@ pipeline {
         }
         stage('CDApply') {
             steps {
-                sh 'terraform apply --auto-approve'
+                sh 'terraform apply --var-file dev.tfvars --auto-approve'
             }
         }
      
