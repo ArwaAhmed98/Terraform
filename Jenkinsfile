@@ -25,7 +25,7 @@ pipeline {
                 sh """
               
                 terraform workspace select dev 
-                terraform apply --auto-approve -var 'password=${PASS}'
+                terraform apply --auto-approve -var 'password=$(PASS)'
                 
                 """
                 }
