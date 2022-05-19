@@ -20,13 +20,16 @@ pipeline {
             }
         stage('Apply') {
             steps {
-                withCredentials([string(credentialsId: 'RDS_PASSWORD', variable: 'PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'rdsdb', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh '''
                         terraform workspace select dev 
-                        terraform apply --auto-approve 
+                        terraform apply --auto-approve  -var "username=$(USERNAME)" -var "password=$(PASSWORD)"
                         '''
                 }
                 // terraform apply --auto-approve -var="password=$(PASS)"
+                // terraform apply \
+                //     -var-file 'production.tfvars' \
+                //     -var-file 'secrets.tfvars'
                         
             }
         }
