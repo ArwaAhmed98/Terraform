@@ -15,7 +15,7 @@ resource "aws_instance" "pubec2" {
 
 ###################################################################################################
 
-resource "aws_instance" "pubec2" {
+resource "aws_instance" "pubec22" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
   subnet_id = module.network.pub_sub2_id
