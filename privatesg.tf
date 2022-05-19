@@ -11,6 +11,14 @@ resource "aws_security_group" "privatesg" {
     cidr_blocks = [module.network.vpc_cidr]
 
   }
+   ingress {
+    description = "TLS from VPC"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [module.network.vpc_cidr]
+
+  }
   ingress {
     description = "TLS from VPC"
     from_port   = 3000
