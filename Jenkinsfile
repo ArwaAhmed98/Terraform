@@ -23,7 +23,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'rdsdb', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh '''
                         terraform workspace select dev 
-                        terraform apply --auto-approve  -var-file "dev.tfvars" -var "username=${USERNAME}" -var "password=${PASSWORD}" 
+                        terraform destroy --auto-approve  -var-file "dev.tfvars" -var "username=${USERNAME}" -var "password=${PASSWORD}"  
                         '''
                 }
                 //  terraform apply --auto-approve  -var-file "dev.tfvars"  -var "username=${USERNAME}" -var "password=${PASSWORD}"
