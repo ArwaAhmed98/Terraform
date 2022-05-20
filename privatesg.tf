@@ -35,6 +35,14 @@ resource "aws_security_group" "privatesg" {
     cidr_blocks = [module.network.vpc_cidr]
   }
   
+  ingress {
+    description = "sg for db"
+    from_port   = 6379
+    to_port     = 6379
+    protocol    = "tcp"
+    cidr_blocks = [module.network.vpc_cidr]
+  }
+  
 
   egress {
     from_port   = 0
