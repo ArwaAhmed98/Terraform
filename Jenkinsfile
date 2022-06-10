@@ -7,10 +7,13 @@ pipeline {
         stage('terraformPlan') {
             steps {
                 withCredentials([usernamePassword(credentialsId:'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh """
-                    terraform -chdir=Terraform/ init 
-                    terraform -chdir=Terraform/ fmt
-                    """
+                    withCredentials([usernamePassword(credentialsId: 'rdsdb', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        sh """
+                        terraform -chdir=Terraform/ init 
+                        terraform -chdir=Terraform/ plan -var-file "dev.tfvars" -var "username=${USERNAME}" -var "password=${PASSWORD}"  
+                        terraform -chdir=Terraform/ fmt
+                        """
+                       }
                     }
                 }
             }
