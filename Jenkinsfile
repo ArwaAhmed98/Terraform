@@ -42,3 +42,4 @@ pipeline {
         }
     }   
 }
+// pwd inside the pipepline gives /var/jenkins_home/workspace/<pipeline_name>
