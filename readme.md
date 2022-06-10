@@ -6,12 +6,13 @@
     * Continous integration and delivery for the newely updated infrastructure. 
     * Run a [Docker](https://docs.docker.com/) container on the private ec2. 
 # Getting Started
-## Demo 1 - Setup AWS Account
-
 > 1.1 clone the `project` 
  ```bash
 git clone https://github.com/ArwaAhmed98/Terraform-aws.git
-``` 
+```
+
+## Demo 1 - Setup AWS Account
+
 > 1.2 Setup AWS account and Create IAM USER with Adminstration Permissions
 
 > 1.3 Create an S3 Bucket on your IAM USER account Named with `itisthreee`
