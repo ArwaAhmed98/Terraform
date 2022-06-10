@@ -17,9 +17,10 @@ pipeline {
                 sh """
                     chmod 777 AnsibleAutomation/start.sh
                     source AnsibleAutomation/start.sh
-                    ansible-playbook -i /var/jenkins_home/ansible/inventory installjava.yml
-                    ansible-playbook -i /var/jenkins_home/ansible/inventory docker.yml
-                    ansible-playbook -i /var/jenkins_home/ansible/inventory copyagent.yml
+                    cd /var/jenkins_home/ansible/
+                    ansible-playbook -i inventory installjava.yml
+                    ansible-playbook -i inventory docker.yml
+                    ansible-playbook -i inventory copyagent.yml
                 """
             }
         }
