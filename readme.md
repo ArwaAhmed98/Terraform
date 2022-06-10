@@ -6,7 +6,7 @@
     * Continous integration and delivery for the newely updated infrastructure. 
     * Run a [Docker](https://docs.docker.com/) container on the private ec2. 
 # Getting Started
-### Demo 1 - Setup AWS Account
+## Demo 1 - Setup AWS Account
 
 > 1.1 clone the `project` 
  ```bash
@@ -21,7 +21,7 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 # TAKECARE
 - Make sure that the name of S3 match exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
 ```
-### Demo2 - Configre & Link Jenkins wih AWS Account
+## Demo2 - Configre & Link Jenkins wih AWS Account
 ```bash
 #NOTE:
 ! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBOARD
@@ -36,7 +36,7 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 
 > 1.5 Configure Terraform Plugin. Go to `Manage Jenkins` > ` Global tool configuration` > Under the Terraform section >  Write in the `NAME:` text box `Terraform` and Select `Terraform v1.1.9 on linux_amd64`
 ```diff
-- Make sure that the Name of tools configured in the infrastructure pipeline.Otherwise you will get errors.
+- Make sure that the Name of tools you configured is the same as the tool Name in the infrastructure pipeline.Otherwise you will get errors.
 ```
 <!-- <ol>
     <li>option 1</li>
