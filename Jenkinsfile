@@ -43,6 +43,8 @@ pipeline {
                     ansible-playbook -i inventory installjava.yml
                     ansible-playbook -i inventory docker.yml
                     ansible-playbook -i inventory copyagent.yml
+                    ansible-galaxy install devopstoolbox.sonarqube
+                    ansible-playbook sonarqube-playbook.yml
                 """
             }
         }

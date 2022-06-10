@@ -109,3 +109,16 @@ cat << EOF > copyagent.yml
         src: agent.jar
         dest: /home/ubuntu/agent.jar
 EOF
+cat << EOF > sonarqube.yml
+
+- name: Install sonarqube
+  hosts: all
+
+  tasks:
+    - name: sonarqube is configured
+      import_role:
+        name: devopstoolbox.sonarqube
+      vars:
+        sonarqube_enable_service: true
+      tags: sonarqube
+EOF
