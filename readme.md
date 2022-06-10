@@ -19,24 +19,25 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 > 1.4 Create a Dynamo-db table Named with `terraform-state-lock-dynamo`.Also, Create a key-value record necessary for runtime lock used by terraform with key=`LOCK-ID` and value=leave it blank .
 ```diff
 # TAKECARE
-- Make sure that the name of S3 mtach exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
+- Make sure that the name of S3 match exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
 ```
 ### Demo2 - Configre & Link Jenkins wih AWS Account
 ```bash
 #NOTE:
-! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBAORD
+! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBOARD
 ```
 > 1.1 Go to Manage Jenkins > Manage Credentials > Add new Credential > kind: Username with password
 
 > 1.2 put your <AWS_ACCESS_KEY_ID> in the USERNAME text box.
 
-> 1.3 put your <AWS_SECRET_KEY> in the password text box.
+> 1.3 put your <AWS_SECRET_KEY> in the password text box.Click `OK`
 
-> 1.4 Click `OK`
+> 1.4 repeat the previous step regarding jenkins credentials with type USERNAME with PASSWORD but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database that will be created in our infrastructure in `Terraform/rds.tf`.
 
-> 1.5 repeat the previous steps regarding jenkins credentials with type USERNAME with PASSWORD but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database
-
-> 1.6 
+> 1.5 Configure Terraform Plugin. Go to `Manage Jenkins` > ` Global tool configuration` > Under the Terraform section >  Write in the `NAME:` text box `Terraform` and Select `Terraform v1.1.9 on linux_amd64`
+```diff
+- Make sure that the Name of tools configured in the infrastructure pipeline.Otherwise you will get errors.
+```
 <!-- <ol>
     <li>option 1</li>
     <li>option 2</li>
