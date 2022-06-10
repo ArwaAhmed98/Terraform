@@ -13,11 +13,11 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 
 ## Demo 1 - Setup AWS Account
 
-> 1.2 Setup AWS account and Create IAM USER with Adminstration Permissions
+> 1.1 Setup AWS account and Create IAM USER with Adminstration Permissions
 
-> 1.3 Create an S3 Bucket on your IAM USER account Named with `itisthreee`
+> 1.2 Create an S3 Bucket on your IAM USER account Named with `itisthreee`
 
-> 1.4 Create a Dynamo-db table Named with `terraform-state-lock-dynamo`.Also, Create a key-value record necessary for runtime lock used by terraform with key=`LOCK-ID` and value=leave it blank .
+> 1.3 Create a Dynamo-db table Named with `terraform-state-lock-dynamo`.Also, Create a key-value record necessary for runtime lock used by terraform with key=`LOCK-ID` and value=leave it blank .
 ```diff
 # TAKECARE
 - Make sure that the name of S3 match exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
