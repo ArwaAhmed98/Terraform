@@ -1,39 +1,31 @@
 pipeline {
     agent any
-    // environment {
-    //     AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-    //     AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
-    // }
     stages {
-        stage('Plan') {
+        stage('terraformPlan') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws-credentails', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                  
                     sh """
-                    terraform init
-                    terraform plan
-                    terraform fmt
+                    terraform -chdir=Terraform/ init
+                    terraform -chdir=Terraform/ plan
+                    terraform -chdir=Terraform/ fmt
                     """
-                    
                     }
                 }
             }
-        stage('Apply') {
+        stage('terraformApply') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'rdsdb', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh '''
-                        terraform workspace select dev 
-                        terraform destroy --auto-approve  -var-file "dev.tfvars" -var "username=${USERNAME}" -var "password=${PASSWORD}"  
+                        terraform -chdir=Terraform/ workspace select dev 
+                        terraform -chdir=Terraform/ apply --auto-approve  -var-file "dev.tfvars" -var "username=${USERNAME}" -var "password=${PASSWORD}"  
                         '''
                 }
                 //  terraform apply --auto-approve  -var-file "dev.tfvars"  -var "username=${USERNAME}" -var "password=${PASSWORD}"
                 // terraform apply --auto-approve -var="password=$(PASS)"
                 // terraform apply \
                 //     -var-file 'production.tfvars' \
-                //     -var-file 'secrets.tfvars'
-                        
+                //     -var-file 'secrets.tfvars'   
             }
         }
-     
     }   
 }
