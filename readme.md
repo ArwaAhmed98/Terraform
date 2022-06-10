@@ -21,7 +21,7 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 # TAKECARE
 - Make sure that the name of S3 mtach exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
 ```
-### Demo2 - Link Jenkins wih AWS Account
+### Demo2 - Configre & Link Jenkins wih AWS Account
 ```bash
 #NOTE:
 ! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBAORD
@@ -34,8 +34,9 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 
 > 1.4 Click `OK`
 
-> 1.5 repeat the previous steps regarding jenkins credentials but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database
->  
+> 1.5 repeat the previous steps regarding jenkins credentials with type USERNAME with PASSWORD but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database
+
+> 1.6 
 <!-- <ol>
     <li>option 1</li>
     <li>option 2</li>
