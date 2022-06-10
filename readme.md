@@ -64,6 +64,9 @@ in order to run a pipeline that starts a docker container for NodeJSApp. we have
 > 4.5 The form at the top of the page allows you to generate new tokens. Click `Generate`.
 
 > 4.6 Copy the token and paste it as a jenkins credentials of type `Secret text` as mentioned eariler in Demo2.
+```bash
+We also need a file env.list which contains the env var that our app use in "rds_redis" branch. So, we automated this step in the AnsibleAutomation/start.sh in order to get right response whenever do curl localhost:3000/db in the private ec2
+```
 ## Demo5 - Run NodeJs on the privateec2 
 > 5.1  On the home page of the jenkins dashboard. Click on `New Item` > `Pipeline` 
 
@@ -72,3 +75,4 @@ in order to run a pipeline that starts a docker container for NodeJSApp. we have
 > 5.3 Click `Save` and Build your pipeline
 
 > 5.4 Now, you can check your containers running on the private ec2 by running `docker ps`. In Addition, you can Check on the SonarQube Dashboard. You will find a code re-view. congrats ! ![MarineGEO circle logo](/images/sonarqube.jpg "MarineGEO logo")
+> 5.5 run the following command in the private ec2. `curl localhost:3000/redis` you have to get ` redis connected successfully`
