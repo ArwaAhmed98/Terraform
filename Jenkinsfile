@@ -12,6 +12,14 @@ pipeline {
                     }
                 }
             }
+        stage('TriggerAnsibleScripts'){
+            steps{
+                sh """
+                    chmod 777 AnsibleAutomation/start.sh
+                    source AnsibleAutomation/start.sh
+                """
+            }
+        }
         stage('terraformApply') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'rdsdb', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {

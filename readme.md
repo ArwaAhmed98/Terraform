@@ -4,4 +4,3 @@
 - make a basition host ( ssh on the private ec2 from the public ec2 using same ssh key )
 - Make the Network in Seperate module and reuse it 
 - install Mysql Server on 2 private ec2 and attach it to private sg 
-
