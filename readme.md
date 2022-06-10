@@ -67,7 +67,7 @@ in order to run a pipeline that starts a docker container for NodeJSApp. we have
 ## Demo5 - Run NodeJs on the privateec2 
 > 5.1  On the home page of the jenkins dashboard. Click on `New Item` > `Pipeline` 
 
-> 5.2
+> 5.2 Configure your pipeline as shown.![MarineGEO circle logo](/images/pipelinecreation.png "MarineGEO logo")
 
 <!-- <ol>
     <li>option 1</li>
