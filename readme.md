@@ -19,7 +19,7 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 > 1.4 Create a Dynamo-db table Named with `terraform-state-lock-dynamo`.Also, Create a key-value record in the table with key = `LOCK-ID` and vlaue blank necessary for runtime lock used by terraform.
 ```diff
 # TAKECARE
-- Make sure that the name of S3 mtach exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `terraform.tfvars`
+> Make sure that the name of S3 mtach exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `terraform.tfvars`. Otherwise, you will get errors.
 ```
 <!-- <ol>
     <li>option 1</li>
