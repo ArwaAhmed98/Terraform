@@ -75,6 +75,7 @@ We also need a file env.list which contains the env var that our app use in "rds
 > 5.3 Click `Save` and Build your pipeline
 
 > 5.4 Now, you can check your containers running on the private ec2 by running `docker ps`. In Addition, you can Check on the SonarQube Dashboard. You will find a code re-view. congrats ! ![MarineGEO circle logo](/images/sonarqube.jpg "MarineGEO logo")
+---
 ```bash
 run the following command in the private ec2. `curl localhost:3000/redis` you have to get "redis connected successfully"
 ```
