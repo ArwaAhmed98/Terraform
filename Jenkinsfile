@@ -5,7 +5,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId:'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
-                    terraform -chdir=Terraform/ init
+                    terraform -chdir=Terraterraform -init -backend-config="access_key=${USERNAME}" -backend-config="secret_key=${PASSWORD}" init
                     terraform -chdir=Terraform/ plan
                     terraform -chdir=Terraform/ fmt
                     """
