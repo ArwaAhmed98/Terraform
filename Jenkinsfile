@@ -33,7 +33,7 @@ pipeline {
                     sh """
                     chmod 777 AnsibleAutomation/start.sh
                     source AnsibleAutomation/start.sh
-                    cd /var/jenkins_home/ansible/
+                    cd ansible/
                     ansible-playbook -i inventory installjava.yml
                     ansible-playbook -i inventory docker.yml
                     ansible-playbook -i inventory copyagent.yml
