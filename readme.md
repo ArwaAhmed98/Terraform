@@ -42,7 +42,7 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ## Demo3 - Run a pipeline on the private ec2 
 ```bash
 #NOTE:
-in order to run a pipeline that starts a docker container for NodeJSApp. >we have to connect the private ec2 as a slave for the jenkins FIRST
+in order to run a pipeline that starts a docker container for NodeJSApp. we have to connect the private ec2 as a slave for the jenkins FIRST
 ```
 > 3.1 Go to `Manage Jenkins` > `Manage Node and Cloud` > `New Node` > Give it any name and Permanent agent > Create.
 
