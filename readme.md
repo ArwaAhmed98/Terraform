@@ -27,12 +27,15 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBAORD
 ```
 > 1.1 Go to Manage Jenkins > Manage Credentials > Add new Credential > kind: Username with password
-> 
+
 > 1.2 put your <AWS_ACCESS_KEY_ID> in the USERNAME text box.
-> 
+
 > 1.3 put your <AWS_SECRET_KEY> in the password text box.
-> 
+
 > 1.4 Click `OK`
+
+> 1.5 repeat the previous steps regarding jenkins credentials but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database
+>  
 <!-- <ol>
     <li>option 1</li>
     <li>option 2</li>
