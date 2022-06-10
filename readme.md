@@ -47,7 +47,7 @@ in order to run a pipeline that starts a docker container for NodeJSApp.we have 
 > 1.1 Go to `Manage Jenkins` > `Manage Node and Cloud` > `New Node` > Give it any name and Permanent agent > Create.
 
 > 1.2 Configure the details as shown in the screenshot.
-![MarineGEO circle logo](./images/slavesnap.png "MarineGEO logo")
+![MarineGEO circle logo](./images/slavesnap.png)
 
 > 1.3 Do not forget to replace the ips provided in the snapshot with your own servers running on AWS.Otherwise, you will get errors.For more detials check this [guide](https://blog.ruanbekker.com/blog/2020/10/26/use-a-ssh-jump-host-with-ansible/) 
 
