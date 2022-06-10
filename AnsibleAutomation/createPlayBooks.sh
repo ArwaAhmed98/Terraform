@@ -19,7 +19,6 @@ EOF
 # playbook to install open-jdk-8
 cat << EOF > installjava.yml
 - hosts: Java_Group
-
   tasks:
   - name: Update APT package manager repositories cache
     become: true
