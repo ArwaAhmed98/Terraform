@@ -72,16 +72,3 @@ in order to run a pipeline that starts a docker container for NodeJSApp. we have
 > 5.3 Click `Save` and Build your pipeline
 
 > 5.4 Now, you can check your containers running on the private ec2 by running `docker ps`. In Addition, you can Check on the SonarQube Dashboard. You will find a code re-view. congrats ! ![MarineGEO circle logo](/images/sonarqube.jpg "MarineGEO logo")
-<!-- <ol>
-    <li>option 1</li>
-    <li>option 2</li>
-    <li>option 3</li>
-</ol> -->
-<!-- - make lambda function using python code to send email with a change in the infrastructure (workspace statefiles)[s3 + Lambda + ses]
-- implement two workspace one for the dev and other for the production
-- make a basition host ( ssh on the private ec2 from the public ec2 using same ssh key )
-- Make the Network in Seperate module and reuse it 
-- install Mysql Server on 2 private ec2 and attach it to private sg  -->
-
-<!-- ![MarineGEO circle logo](/images/sonarqube.png "MarineGEO logo") -->
-###
