@@ -9,7 +9,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId:'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
                     terraform -chdir=Terraform/ init 
-                    terraform -chdir=Terraform/ plan
                     terraform -chdir=Terraform/ fmt
                     """
                     }
