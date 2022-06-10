@@ -1,4 +1,5 @@
-# this file install open-jdk-8, docker-cli, and copy agent.jar on the privatec2 instance which is already connected to jenkis as a slave
+# this file install open-jdk-8, docker-cli, and copy agent.jar
+# on the privatec2 instance which is already connected to jenkis as a slave
 mkdir -p /var/jenkins_home/ansible/
 cat << EOF > inventory
 [host]
