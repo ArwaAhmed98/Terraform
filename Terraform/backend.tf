@@ -3,7 +3,7 @@ terraform {
     bucket= "itisthreee"
     key    = "backend/terraform.tf"
     region = "us-east-1"
-    #  dynamodb_table = "terraform-state-lock-dynamo"
+    dynamodb_table = "terraform-state-lock-dynamo"
   }
 }
 # backend.tf run only in init command , so we cannot use variables here

@@ -13,7 +13,10 @@
 git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ``` 
 > 1.2 Setup AWS account and Create IAM USER with Adminstration Permissions
-> 1.3 Create an S3 Bucket on your IAM USER account
+
+> 1.3 Create an S3 Bucket on your IAM USER account Named with `itisthreee`
+
+> 1.4 Create a Dynamo-db table Named with `terraform-state-lock-dynamo`.Also, Create a key-value record in the table with key = `LOCK-ID` and vlaue blank necessary for runtime lock used by terraform.
 <!-- <ol>
     <li>option 1</li>
     <li>option 2</li>
