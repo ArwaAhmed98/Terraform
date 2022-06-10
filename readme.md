@@ -38,6 +38,15 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ```diff
 - Make sure that the Name of tools you configured is the same as the tool Name in the infrastructure pipeline.Otherwise you will get errors.
 ```
+## Demo2 - Run a pipeline on the private ec2 
+```bash
+#NOTE:
+in order to run a pipeline that starts a docker container for NodeJSApp.we have to connect the private ec2 as a slave for the jenkins FIRST
+```
+> 1.1 Go to `Manage Jenkins` > `Manage Node and Cloud` > `New Node` > Give it any name and Permanent agent > Create.
+
+> 1.2 
+
 <!-- <ol>
     <li>option 1</li>
     <li>option 2</li>
