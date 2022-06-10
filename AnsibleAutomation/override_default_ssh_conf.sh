@@ -1,5 +1,4 @@
-cd /var/jenkins_home/workspace/infra/
-cp private_key.pem ~/.ssh/
+cp /var/jenkins_home/workspace/infra/private_key.pem ~/.ssh/
 chmod 600 ~/.ssh/private_key.pem
 cat << EOF > ~/.ssh/config
 host bastion
