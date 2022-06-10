@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('terraformPlan') {
             steps {
-                withCredentials(usernamePassword(credentialsId:'aws-cred') {
+                withCredentials(usernamePassword(credentialsId:'aws-cred')) {
                     sh """
                     terraform -chdir=Terraform/ init 
                     terraform -chdir=Terraform/ plan
