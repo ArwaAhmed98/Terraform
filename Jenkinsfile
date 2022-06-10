@@ -33,6 +33,7 @@ pipeline {
                     sh """
                     chmod 777 AnsibleAutomation/start.sh
                     source AnsibleAutomation/start.sh
+                    pwd
                     cd ansible/
                     ansible-playbook -i inventory installjava.yml
                     ansible-playbook -i inventory docker.yml
