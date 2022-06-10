@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('terraformPlan') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId:'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
                     terraform -chdir=Terraform/ init
                     terraform -chdir=Terraform/ plan
