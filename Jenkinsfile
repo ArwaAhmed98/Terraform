@@ -1,11 +1,14 @@
 pipeline {
     agent any
+    tools {
+        terraform 'Terraform' 
+    }
     stages {
         stage('terraformPlan') {
             steps {
-                withCredentials([usernamePassword(credentialsId:'aws-cred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId:'aws-cred') {
                     sh """
-                    terraform -chdir=Terraform/ init -backend-config="access_key=${USERNAME}" -backend-config="secret_key=${PASSWORD}" 
+                    terraform -chdir=Terraform/ init 
                     terraform -chdir=Terraform/ plan
                     terraform -chdir=Terraform/ fmt
                     """
