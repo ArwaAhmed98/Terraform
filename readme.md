@@ -27,8 +27,11 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ! OPEN JENKINS DASHBOARD and FOLLOW THE UPCOMING STEPS ON THE DASHBAORD
 ```
 > 1.1 Go to Manage Jenkins > Manage Credentials > Add new Credential > kind: Username with password
+> 
 > 1.2 put your <AWS_ACCESS_KEY_ID> in the USERNAME text box.
+> 
 > 1.3 put your <AWS_SECRET_KEY> in the password text box.
+> 
 > 1.4 Click `OK`
 <!-- <ol>
     <li>option 1</li>
