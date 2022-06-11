@@ -35,16 +35,15 @@ pipeline {
         }
         stage('TriggerAnsibleScripts'){
             steps{
-                    sh """
-                    chmod 777 AnsibleAutomation/start.sh
-                    source AnsibleAutomation/start.sh
-                    pwd
-                    cd ansible/
-                    ansible-playbook -i inventory installjava.yml
-                    ansible-playbook -i inventory docker.yml
-                    ansible-playbook -i inventory copyagent.yml
-                    ansible-galaxy install devopstoolbox.sonarqube
-                    ansible-playbook sonarqube-playbook.yml
+                sh """
+                chmod 777 AnsibleAutomation/start.sh
+                source AnsibleAutomation/start.sh
+                cd ansible/
+                ansible-playbook -i inventory installjava.yml
+                ansible-playbook -i inventory docker.yml
+                ansible-playbook -i inventory copyagent.yml
+                ansible-galaxy install devopstoolbox.sonarqube
+                ansible-playbook sonarqube-playbook.yml
                 """
             }
         }
