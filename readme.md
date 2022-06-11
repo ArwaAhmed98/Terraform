@@ -21,8 +21,8 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 ```diff
 # TAKECARE
 - Make sure that the name of S3 match exactly the name provided in the `Terraform/backend.tf` and Also the region you are working on AWS match the same region provided in `Terraform/terraform.tfvars`.Otherwise, you will get errors.
----
 ```
+---
 ## Step 2  - Configure & Link Jenkins wih AWS Account
 ```bash
 #NOTE:
