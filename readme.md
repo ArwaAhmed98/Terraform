@@ -1,4 +1,5 @@
-# Fully completed guide to deploy NodeJs App on the private ec2 using Jenkins pipelines
+
+### Fully completed guide to deploy NodeJs App on the private ec2 using Jenkins pipelines
 # This project contains 
 * Infrastructure as code using [Terraform](https://www.terraform.io/) that provision an environment on the [AWS](https://aws.amazon.com/console/).
 * Automated [Ansible](https://docs.ansible.com/) scripts that configure the environment.
@@ -35,15 +36,15 @@ git clone https://github.com/ArwaAhmed98/Terraform-aws.git
 
 > 2.4 repeat the previous step regarding jenkins credentials with type USERNAME with PASSWORD but now for [RDS](https://aws.amazon.com/rds/sqlserver/) USERNAME and PASSWORD for Database that will be created in our infrastructure in `Terraform/rds.tf`.
 
-> 2.5 Configure Terraform Plugin. Go to `Manage Jenkins` > ` Global tool configuration` > Under the Terraform section >  Write in the `NAME:` text box `Terraform` and Select `Terraform v1.1.9 on linux_amd64`
+> 2.5 Configure Terraform Plugin. Go to `Manage Jenkins` > ` Global tool configuration` > Under the Terraform section >  Write in the `NAME:` `Terraform` and Select `Terraform v1.1.9 on linux_amd64`
 ```diff
 - Make sure that the Name of tools you configured is the same as the tool Name in the infrastructure pipeline.Otherwise you will get errors.
 ```
 ## NOW, you can build the infrastructure pipeline
-## Step 3  - Run a pipeline on the private ec2 
+## Step 3  - Connect private ec2 to Jenkins as a slave
 ```bash
 #NOTE:
-in order to run a pipeline that starts a docker container for NodeJSApp. we have to connect the private ec2 as a slave for the jenkins FIRST
+in order to run a pipeline that starts a docker container for NodeJSApp on the privateec2. we have to connect it  as a slave for the jenkins FIRST
 ```
 > 3.1 Go to `Manage Jenkins` > `Manage Node and Cloud` > `New Node` > Give it any name and Permanent agent > Create.
 
